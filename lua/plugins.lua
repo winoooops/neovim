@@ -6,11 +6,42 @@ return require('packer').startup(function()
         "ellisonleao/gruvbox.nvim",
         requires = {"rktjmp/lush.nvim"}
     }
+    -- tokyonight theme
+    use 'folke/tokyonight.nvim'
+
+    
+    -- which-key
     use {
-	"folke/which-key.nvim",
-	config=function()
-		require('which-key').setup {
-		}
-	end
-	}
+        "folke/which-key.nvim", 
+        event = "VimEnter", 
+        config = [[require('config.which-key')]]
+    }    
+    -- alpha nvim
+    use {
+        'goolord/alpha-nvim', 
+        event = 'VimEnter',
+        config = function() 
+            require('config.alpha')
+        end
+    }
+
+    -- Auto format tools
+    use({ "sbdchd/neoformat", cmd = { "Neoformat" } })
+
+    -- A list of colorscheme plugin you may want to try. Find what suits you.
+    use "lifepillar/vim-gruvbox8"
+    use "navarasu/onedark.nvim"
+    use "sainnhe/edge"
+    use "sainnhe/sonokai"
+    use "sainnhe/gruvbox-material"
+    use "shaunsingh/nord.nvim"
+    use "NTBBloodbath/doom-one.nvim"
+    use "sainnhe/everforest"
+    use "EdenEast/nightfox.nvim"
+
+    -- use({ "akinsho/bufferline.nvim", event = "VimEnter", config = [[require('config.bufferline')]] })
+
+    -- Highlight URLs inside vim
+    use({"itchyny/vim-highlighturl", event = "VimEnter"})
+
 end)

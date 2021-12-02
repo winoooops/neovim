@@ -8,6 +8,5 @@ lua require('plugins')
 lua require('keybindings')
 
 " color theme
-set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
 
