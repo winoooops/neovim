@@ -77,6 +77,14 @@ _G.packer_plugins = {
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["bufferline.nvim"] = {
+    config = { "require('config.bufferline')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["doom-one.nvim"] = {
     loaded = true,
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/doom-one.nvim",
@@ -140,10 +148,24 @@ _G.packer_plugins = {
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/sonokai",
     url = "https://github.com/sainnhe/sonokai"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
+  ["vim-airline"] = {
+    load_after = {
+      ["vim-airline-themes"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/vim-airline",
+    url = "https://github.com/vim-airline/vim-airline"
+  },
+  ["vim-airline-themes"] = {
+    after = { "vim-airline" },
+    load_after = {
+      ["vim-signify"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/vim-airline-themes",
+    url = "https://github.com/vim-airline/vim-airline-themes"
   },
   ["vim-gruvbox8"] = {
     loaded = true,
@@ -156,6 +178,14 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/vim-highlighturl",
     url = "https://github.com/itchyny/vim-highlighturl"
+  },
+  ["vim-signify"] = {
+    after = { "vim-airline-themes" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/vim-signify",
+    url = "https://github.com/mhinz/vim-signify"
   },
   ["which-key.nvim"] = {
     config = { "require('config.which-key')" },
@@ -178,7 +208,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim', 'alpha-nvim', 'vim-highlighturl'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vim-signify'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-highlighturl', 'which-key.nvim', 'alpha-nvim', 'bufferline.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
