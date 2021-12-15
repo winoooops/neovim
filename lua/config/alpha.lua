@@ -15,12 +15,15 @@ dashboard.section.header.val = {
 }
 
 -- Set menu
+-- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "Leader f f", "  > Find file", ":Leaderf file --popup<CR>"),
-    dashboard.button( "Leader f r", "  > Recent files"   , ":Leaderf mru --popup<CR>"),
-    dashboard.button( "Leader f g", "  > Project grep" , ":Leaderf rg --popup<CR>"),
-    dashboard.button( "e", "  > New file" , ":enew <CR>"),
-    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
+    dashboard.button("e", "  New file", "<cmd>ene <CR>"),
+    dashboard.button("SPC f f", "  Find file"),
+    dashboard.button("SPC f h", "  Recently opened files"),
+    dashboard.button("SPC f r", "  Frecency/MRU"),
+    dashboard.button("SPC f g", "  Find word"),
+    dashboard.button("SPC f m", "  Jump to bookmarks"),
+    dashboard.button("SPC s l", "  Open last session"),
 }
 
 -- Daily Quote
