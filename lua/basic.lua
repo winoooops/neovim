@@ -1,9 +1,16 @@
 -- ujtf8
-vim.g.encoding = "UTF-8"
+-- vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
 
+-- 打开全彩
+vim.g.termguicolor = true
+
+-- tokyonight 主题配置
+vim.g.tokyonight_transparent_sidebar = true
+
+
 -- highlight current row
--- vim.wo.cursorline = true
+vim.wo.cursorline = true
 
 -- 禁止创建备份文件
 vim.o.backup = false
@@ -13,13 +20,13 @@ vim.o.swapfile = false
 -- 新行对齐当前行，空格替代tab
 vim.o.expandtab = true
 vim.bo.expandtab = true
-vim.o.autoindent = true
+
 vim.bo.autoindent = true
 vim.o.smartindent = true
 
 -- tab定义为4个空格
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4 
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2 
 
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
@@ -64,3 +71,9 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
 -- 超时
 vim.o.timeoutlen = 500
+
+-- markdown preview 设置
+vim.g.glow_binary_path = vim.env.HOME .. "/bin"
+vim.g.glow_border = "rounded"
+vim.g.glow_width = 200
+
