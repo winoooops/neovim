@@ -97,15 +97,21 @@ return packer.startup(
         use({ "rcarriga/nvim-notify", event = "BufEnter", config = [[require('config.nvim-notify')]]})
 
         -- auto completion 
-        use "hrsh7th/nvim-cmp"            -- auto completion
-        use "hrsh7th/cmp-buffer"          -- buffer completion 
-        use "hrsh7th/cmp-path"            -- path completion 
-        use "hrsh7th/cmp-cmdline"         -- command-line completion
-        use "saadparwaiz1/cmp_luasnip"    -- snippet completion
+        use "hrsh7th/nvim-cmp"                        -- auto completion
+        use "hrsh7th/cmp-buffer"                      -- buffer completion 
+        use "hrsh7th/cmp-path"                        -- path completion 
+        use "hrsh7th/cmp-cmdline"                     -- command-line completion
+        use "saadparwaiz1/cmp_luasnip"                -- snippet completion
+        use "hrsh7th/cmp-nvim-lsp"                    -- provide LSP completions via cmp
 
         -- snippets 
-        use "L3MON4D3/LuaSnip"            -- snippet engine
-        use "rafamadriz/friendly-snippets"-- useful snippets across different languages
+        use "L3MON4D3/LuaSnip"                        -- snippet engine
+        use "rafamadriz/friendly-snippets"            -- useful snippets across different languages
+
+
+        -- LSP 
+        use "neovim/nvim-lspconfig"                 -- enable LSP
+        use "williamboman/nvim-lsp-installer"         -- use servers to manage language support
     end
 )
 
