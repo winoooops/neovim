@@ -62,3 +62,11 @@ map("x", "K", ":m '<-2<CR>gv-gv", opt)
 -- 保存
 map("n", "<leader>s", ":w<CR>", opt)
 
+-- Telescope: fuzzyfind时不限时preview
+map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy())<CR>", opt)
+-- Telescope: livegrep
+map("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", opt)
+-- Telescope: frecency search 
+map("n", "<leader>F", "<cmd>lua require('telescope').extensions.frecency.frecency()<CR>", opt)
+
+

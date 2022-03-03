@@ -104,6 +104,19 @@ return packer.startup(
         -- LSP
         use "neovim/nvim-lspconfig"                 -- enable LSP
         use "williamboman/nvim-lsp-installer"         -- use servers to manage language support
+
+        -- fuzzy-finding via telescope 
+        use "nvim-telescope/telescope.nvim"
+        -- enable media preview in telescope 
+        use "nvim-telescope/telescope-media-files.nvim"
+        -- smart fuzzy find 
+        use {
+          "nvim-telescope/telescope-frecency.nvim",
+          config = function()
+            require"telescope".load_extension("frecency")
+          end,
+          requires = {"tami5/sqlite.lua"}
+        }
     end
 )
 

@@ -26,7 +26,7 @@ vim.o.smartindent = true
 
 -- tab定义为4个空格
 vim.o.softtabstop = 2
-vim.o.shiftwidth = 2 
+vim.o.shiftwidth = 2
 
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
