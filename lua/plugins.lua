@@ -26,12 +26,6 @@ vim.cmd [[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
-end
-
--- protected call for packer
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
     print("Couldnot find packer")
     return
 end
@@ -51,14 +45,12 @@ return packer.startup(
             "ellisonleao/gruvbox.nvim",
             requires = {"rktjmp/lush.nvim"}
         }
-        -- tokyonight theme use 'folke/tokyonight.nvim'
-        
         -- which-key
         use {
             "folke/which-key.nvim", 
             event = "VimEnter", 
             config = [[require('config.which-key')]]
-        }    
+        }
 
         -- Auto format tools
         use({ "sbdchd/neoformat", cmd = { "Neoformat" } })
@@ -79,7 +71,6 @@ return packer.startup(
 
         -- Highlight URLs inside vim
         use({"itchyny/vim-highlighturl", event = "VimEnter"})
-        
         -- show git change
         use({"mhinz/vim-signify", event = 'BufEnter'})
         -- colorful status line and theme
@@ -96,20 +87,21 @@ return packer.startup(
         -- notification plugin
         use({ "rcarriga/nvim-notify", event = "BufEnter", config = [[require('config.nvim-notify')]]})
 
-        -- auto completion 
+        -- auto completion
         use "hrsh7th/nvim-cmp"                        -- auto completion
         use "hrsh7th/cmp-buffer"                      -- buffer completion 
         use "hrsh7th/cmp-path"                        -- path completion 
         use "hrsh7th/cmp-cmdline"                     -- command-line completion
         use "saadparwaiz1/cmp_luasnip"                -- snippet completion
         use "hrsh7th/cmp-nvim-lsp"                    -- provide LSP completions via cmp
+        use "hrsh7th/cmp-nvim-lua"
 
-        -- snippets 
+        -- snippets
         use "L3MON4D3/LuaSnip"                        -- snippet engine
         use "rafamadriz/friendly-snippets"            -- useful snippets across different languages
 
 
-        -- LSP 
+        -- LSP
         use "neovim/nvim-lspconfig"                 -- enable LSP
         use "williamboman/nvim-lsp-installer"         -- use servers to manage language support
     end

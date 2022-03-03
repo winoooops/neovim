@@ -10,8 +10,8 @@ local opt = { noremap = true, silent = true }
 -- map('模式','按键','映射为XX',opt)
 
 -- 快速移动 <C> => Ctrl
-map("n", "<C-k>", "5k", opt)
-map("n", "<C-j>", "5j", opt)
+-- map("n", "<C-k>", "5k", opt)
+-- map("n", "<C-j>", "5j", opt)
 
 -- 水平分屏 <leader> => space
 map("n", "<leader>sw", ":vsp<CR>", opt)
@@ -44,7 +44,7 @@ map("n", "<S-k>", ":bnext<CR>", opt)
 map("n", "<S-j>", ":bprevious<CR>", opt)
 
 -- 删除当前buffer
-map("n", "<S-x>", ":bd<CR>", opt)
+map("n", "<S-q>", ":bd<CR>", opt)
 
 -- 在Visual模式下改变锁进不会退出
 map("v", "<", "<gv", opt)
