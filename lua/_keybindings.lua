@@ -67,6 +67,5 @@ map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('t
 -- Telescope: livegrep
 map("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", opt)
 -- Telescope: frecency search 
-map("n", "<leader>F", "<cmd>lua require('telescope').extensions.frecency.frecency()<CR>", opt)
-
+map("n", "<leader>ff", "<cmd>lua require('telescope').extensions.frecency.frecency()<CR>", opt)
 

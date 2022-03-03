@@ -1,8 +1,10 @@
-require 'basic'                               -- basic configuration
-require 'colorscheme'                         -- coloorscheme
-require 'keybindings'                         -- keymaps & shortcuts
+require '_basic'                               -- basic configuration
+require '_colorscheme'                         -- coloorscheme
+require '_keybindings'                         -- keymaps & shortcuts
 require 'plugins'                             -- plugins
-require 'cmpconfig'                           -- auto completions
+require '_cmpconfig'                           -- auto completions
 require 'lsp'
+require '_telescope'
+require '_treesitter'
 
 

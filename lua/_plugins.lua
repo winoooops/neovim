@@ -65,11 +65,11 @@ return packer.startup(
 
         -- A list of colorscheme plugin you may want to try. Find what suits you.
         use "folke/tokyonight.nvim"
-        -- use "lifepillar/vim-gruvbox8"
-        -- use "navarasu/onedark.nvim"
-        -- use "sainnhe/edge"
-        -- use "sainnhe/sonokai"
-        -- use "sainnhe/gruvbox-material"
+        use "lifepillar/vim-gruvbox8"
+        use "navarasu/onedark.nvim"
+        use "sainnhe/edge"
+        use "sainnhe/sonokai"
+        use "sainnhe/gruvbox-material"
         use "shaunsingh/nord.nvim"
         use "NTBBloodbath/doom-one.nvim"
         use "sainnhe/everforest"
@@ -128,8 +128,9 @@ return packer.startup(
           "nvim-treesitter/nvim-treesitter",
           run=":TSUpdate"
         }
-        -- colorful parentesis
+        -- colorful indentation
         use "p00f/nvim-ts-rainbow"
+        
     end
 )
 
