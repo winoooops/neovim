@@ -62,6 +62,10 @@ return packer.startup(
 
         -- Auto format tools
         use({ "sbdchd/neoformat", cmd = { "Neoformat" } })
+        -- Auto Pairs 
+        use({ "windwp/nvim-autopairs", config=[[require('config.autopairs')]]})
+        -- colorful parentesis
+        use "p00f/nvim-ts-rainbow"
 
         -- A list of colorscheme plugin you may want to try. Find what suits you.
         use "folke/tokyonight.nvim"
@@ -96,7 +100,7 @@ return packer.startup(
         use({ "rcarriga/nvim-notify", event = "BufEnter", config = [[require('config.nvim-notify')]]})
 
         -- auto completion
-        use "hrsh7th/nvim-cmp"                        -- auto completion
+        use({ "hrsh7th/nvim-cmp", config = [[require('config.cmp')]] })                        -- auto completion
         use "hrsh7th/cmp-buffer"                      -- buffer completion 
         use "hrsh7th/cmp-path"                        -- path completion 
         use "hrsh7th/cmp-cmdline"                     -- command-line completion
@@ -114,7 +118,7 @@ return packer.startup(
         use "williamboman/nvim-lsp-installer"         -- use servers to manage language support
 
         -- fuzzy-finding via telescope 
-        use "nvim-telescope/telescope.nvim"
+        use({"nvim-telescope/telescope.nvim", config=[[require('config.telescope')]]})
         -- enable media preview in telescope 
         use "nvim-telescope/telescope-media-files.nvim"
         -- smart fuzzy find 
@@ -124,12 +128,18 @@ return packer.startup(
         }
 
         -- treesitting
-        use {
+        use({
           "nvim-treesitter/nvim-treesitter",
-          run=":TSUpdate"
-        }
-        -- colorful parentesis
-        use "p00f/nvim-ts-rainbow"
+          run=":TSUpdate",
+          config=[[require('config.treesitter')]]
+        })
+
+        -- better comments 
+        use({"numToStr/Comment.nvim", config=[[require('config.comments')]]})
+        use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+        -- git signs 
+        use({"lewis6991/gitsigns.nvim", config=[['config.gitsigns']]})
     end
 )
 
