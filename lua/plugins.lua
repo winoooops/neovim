@@ -66,6 +66,8 @@ return packer.startup(
         use({ "windwp/nvim-autopairs", config=[[require('config.autopairs')]]})
         -- colorful parentesis
         use "p00f/nvim-ts-rainbow"
+        -- fix issues when I use :bdelete 
+        use "moll/vim-bbye"
 
         -- A list of colorscheme plugin you may want to try. Find what suits you.
         use "folke/tokyonight.nvim"
