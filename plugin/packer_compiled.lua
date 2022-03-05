@@ -142,7 +142,7 @@ _G.packer_plugins = {
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
-    config = { "'config.gitsigns'" },
+    config = { "require('config.gitsigns')" },
     loaded = true,
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
@@ -218,6 +218,12 @@ _G.packer_plugins = {
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/opt/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
+  ["nvim-tree.lua"] = {
+    config = { "require('config.nvimtree')" },
+    loaded = true,
+    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     config = { "require('config.treesitter')" },
     loaded = true,
@@ -233,6 +239,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/Winoooops/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -332,6 +343,10 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-treesitter]], true)
 require('config.treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('config.nvimtree')
+time([[Config for nvim-tree.lua]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('config.telescope')
@@ -342,7 +357,7 @@ require('config.autopairs')
 time([[Config for nvim-autopairs]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
-'config.gitsigns'
+require('config.gitsigns')
 time([[Config for gitsigns.nvim]], false)
 
 -- Command lazy-loads

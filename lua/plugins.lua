@@ -139,7 +139,11 @@ return packer.startup(
         use 'JoosepAlviste/nvim-ts-context-commentstring'
 
         -- git signs 
-        use({"lewis6991/gitsigns.nvim", config=[['config.gitsigns']]})
+        use({"lewis6991/gitsigns.nvim", config=[[require('config.gitsigns')]]})
+
+        -- nvim-tree
+        use 'kyazdani42/nvim-web-devicons'
+        use({'kyazdani42/nvim-tree.lua', config=[[require('config.nvimtree')]]})
     end
 )
 
