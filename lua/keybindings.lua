@@ -67,9 +67,9 @@ map("n", "<leader>s", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>:w<CR>", opt)
 -- Telescope: fuzzyfind时不限时preview
 map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy())<CR>", opt)
 -- Telescope: livegrep
-map("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", opt)
+map("n", "<leader>fp", "<cmd>Telescope projects<CR>", opt)
 -- Telescope: frecency search 
-map("n", "<leader>ff", "<cmd>lua require('telescope').extensions.frecency.frecency()<CR>", opt)
+map("n", "<leader>fs", "<cmd>lua require('telescope').extensions.frecency.frecency()<CR>", opt)
 
 -- lazygit 
 map("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opt)

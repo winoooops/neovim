@@ -150,6 +150,12 @@ return packer.startup(
 
         -- terminal tools 
         use({ "akinsho/toggleterm.nvim", config=[[require('config.toggleterm')]]})
+
+        -- indentline 
+        use({ "lukas-reineke/indent-blankline.nvim", config = [[require('config.indentline')]]})
+
+        -- project managers
+        use({ "ahmedkhalf/project.nvim", config = [[require('config.projects')]]})
     end
 )
 
