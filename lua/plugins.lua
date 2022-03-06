@@ -118,6 +118,7 @@ return packer.startup(
         -- LSP
         use "neovim/nvim-lspconfig"                 -- enable LSP
         use "williamboman/nvim-lsp-installer"         -- use servers to manage language support
+        use({ "jose-elias-alvarez/null-ls.nvim", config = [[require('config.null-ls')]]})
 
         -- fuzzy-finding via telescope 
         use({"nvim-telescope/telescope.nvim", config=[[require('config.telescope')]]})
@@ -146,6 +147,9 @@ return packer.startup(
         -- nvim-tree
         use 'kyazdani42/nvim-web-devicons'
         use({'kyazdani42/nvim-tree.lua', config=[[require('config.nvimtree')]]})
+
+        -- terminal tools 
+        use({ "akinsho/toggleterm.nvim", config=[[require('config.toggleterm')]]})
     end
 )
 
