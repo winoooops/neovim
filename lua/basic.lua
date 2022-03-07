@@ -59,7 +59,7 @@ vim.o.mouse = 'a'
 
 -- 禁止创建备份文件
 vim.o.backup = false
-vim.o.writebackup = false 
+vim.o.writebackup = false
 vim.o.swapfile = false
 
 -- split window 从下边和右边出现

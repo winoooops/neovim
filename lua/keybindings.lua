@@ -62,6 +62,17 @@ map("v", ">", ">gv", opt)
 map("x", "J", ":m '>+1<CR>gv-gv", opt)
 map("x", "K", ":m '<-2<CR>gv-gv", opt)
 
+-- insert 模式下, 移动cursor
+map("i", "<C-h>", "<C-O>h", opt)
+map("i", "<C-l>", "<C-O>l", opt)
+map('i', "<C-j>", "<C-O>j", opt)
+map('i', "<C-k>", "<C-O>k", opt)
+map("i", "<C-w>", "<C-O>w", opt)
+map("i", "<C-e>", "<C-O>e", opt)
+map("i", "<C-b>", "<C-O>b", opt)
+map('i', "<C-a>", "<C-O>A", opt)
+map('i', "<C-i>", "<C-O>I", opt)
+
 -- 保存
 -- TODO: find a way to let nvim format before save
 map("n", "<leader>s", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>:w<CR>", opt)
