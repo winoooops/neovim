@@ -8,6 +8,8 @@ vim.g.termguicolor = true
 -- tokyonight 主题配置
 vim.g.tokyonight_transparent_sidebar = true
 
+-- airline 主题
+vim.g.airline_theme = 'murmur'
 
 -- highlight current row
 vim.wo.cursorline = true
