@@ -89,7 +89,7 @@ return packer.startup(
         use({"mhinz/vim-signify", event = 'BufEnter'})
         -- colorful status line and theme
         use({ "vim-airline/vim-airline-themes", after = 'vim-signify',})
-        use({ "vim-airline/vim-airline", after = 'vim-airline-themes',})
+        use({ "vim-airline/vim-airline", after = 'vim-airline-themes', config = [[ require('config.airline')]]})
         use({ "akinsho/bufferline.nvim", event = "VimEnter", config = [[require('config.bufferline')]] })
         -- Alpha-nvim
         use { 'goolord/alpha-nvim', event = 'VimEnter', config = [[require('config.alpha')]] }

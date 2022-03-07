@@ -1,3 +1,5 @@
+
+
 -- ujtf8
 -- vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
@@ -10,6 +12,9 @@ vim.g.tokyonight_transparent_sidebar = true
 
 -- airline 主题
 vim.g.airline_theme = 'murmur'
+vim.g.airline_poweline_fonts = 1
+-- airline 右下section配置
+vim.g.airline_section_z = '%p%%'
 
 -- highlight current row
 vim.wo.cursorline = true
