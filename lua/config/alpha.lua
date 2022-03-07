@@ -24,7 +24,7 @@ dashboard.section.buttons.val = {
     dashboard.button("SPC f g", "  Find word"),
     dashboard.button("SPC f m", "  Jump to bookmarks"),
     dashboard.button("SPC s l", "  Open last session"),
-    dashboard.button("C", "  NVIM Config", ":e ~/.config/nvim/init.lua <CR>")
+    dashboard.button("C", "  Config", ":e ~/.config/nvim/init.lua <CR>")
 }
 
 -- Daily Quote

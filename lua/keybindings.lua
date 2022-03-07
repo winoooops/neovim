@@ -45,7 +45,9 @@ map("n", "<S-k>", ":bnext<CR>", opt)
 map("n", "<S-j>", ":bprevious<CR>", opt)
 
 -- 删除当前buffer
-map("n", "<S-q>", ":bd<CR>", opt)
+map("n", "<leader>w", ":Bdelete <CR>", opt)
+-- 删除全部buffer
+map("n", "<leader>W", ":bufdo <bar> :Bdelete <CR>", opt)
 
 -- 在Visual模式下改变锁进不会退出
 map("v", "<", "<gv", opt)
