@@ -1,17 +1,12 @@
-
+-- 将<leader>设置为空格键
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- 保存本地变量，用来设置快捷键
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
-
 -- 之后就可以这样映射按键了
 -- map('模式','按键','映射为XX',opt)
-
--- 快速移动 <C> => Ctrl
--- map("n", "<C-k>", "5k", opt)
--- map("n", "<C-j>", "5j", opt)
 
 -- 水平分屏 <leader> => space
 map("n", "<leader>sw", ":vsp<CR>", opt)
@@ -43,11 +38,22 @@ map("n", "<leader>ns", ":vertical resize -2<CR>", opt)
 -- 在buffer中前进/后退<S> => Shift
 map("n", "<S-k>", ":bnext<CR>", opt)
 map("n", "<S-j>", ":bprevious<CR>", opt)
-
 -- 删除当前buffer
 map("n", "<leader>w", ":Bdelete <CR>", opt)
 -- 删除全部buffer
 map("n", "<leader>W", ":bufdo <bar> :Bdelete <CR>", opt)
+
+-- 切换tab
+-- 切换下一个tab
+map("n", "<leader><leader>k", ":tabn<CR>", opt)
+-- 切换上一个tab
+map("n", "<leader><leader>j", ":tabp<CR>", opt)
+-- 新建并进入一个新的tab (empty buffer)
+map("n", "<leader><leader>n", ":tabnew<CR>", opt)
+-- 新建并进入一个新的tab (打开制定文件) :tabedit <filePath>
+-- 关闭当前tab
+map("n", "<leader><leader>w", ":tabc<CR>", opt)
+-- 查看tab打开的文件 :tabs
 
 -- 在Visual模式下改变锁进不会退出
 map("v", "<", "<gv", opt)

@@ -29,13 +29,14 @@ bufferline.setup({
       -- filter out filetypes you don't want to see
       local exclude_ft = { "qf", "fugitive", "git" }
       local cur_ft = vim.bo[bufnr].filetype
-      local should_filter = vim.tbl_contains(exclude_ft, cur_ft)
+      local file_should_stay = not vim.tbl_contains(exclude_ft, cur_ft)
 
-      if should_filter then
-        return false
+      --- only see the buffer in the active tab
+      local only_show_active_buffers = vim.api.nvim_buf_get_name(bufnr):find(vim.fn.getcwd(), 0, true)
+
+      if file_should_stay and only_show_active_buffers then
+        return true
       end
-
-      return true
     end,
     custom_areas = {
       right = function()
