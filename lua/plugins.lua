@@ -156,6 +156,9 @@ return packer.startup(
 
         -- project managers
         use({ "ahmedkhalf/project.nvim", config = [[require('config.projects')]]})
+
+        -- github copilot 
+        use "github/copilot.vim"
     end
 )
 

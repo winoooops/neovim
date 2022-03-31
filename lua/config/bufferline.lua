@@ -34,7 +34,7 @@ bufferline.setup({
       --- only see the buffer in the active tab
       local only_show_active_buffers = vim.api.nvim_buf_get_name(bufnr):find(vim.fn.getcwd(), 0, true)
 
-      if file_should_stay and only_show_active_buffers then
+      if only_show_active_buffers then
         return true
       end
     end,
