@@ -65,7 +65,7 @@ return packer.startup(
         -- Auto Pairs 
         use({ "windwp/nvim-autopairs", config=[[require('config.autopairs')]]})
         -- colorful parentesis
-        use "p00f/nvim-ts-rainbow"
+        -- use "p00f/nvim-ts-rainbow"
         -- fix issues when I use :bdelete 
         use "moll/vim-bbye"
 
@@ -131,15 +131,15 @@ return packer.startup(
         }
 
         -- treesitting
-        use({
-          "nvim-treesitter/nvim-treesitter",
-          run=":TSUpdate",
-          config=[[require('config.treesitter')]]
-        })
+        -- use({
+          -- "nvim-treesitter/nvim-treesitter",
+          -- run=":TSUpdate",
+          -- config=[[require('config.treesitter')]]
+        --})
 
         -- better comments 
         use({"numToStr/Comment.nvim", config=[[require('config.comments')]]})
-        use 'JoosepAlviste/nvim-ts-context-commentstring'
+        -- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
         -- git signs 
         use({"lewis6991/gitsigns.nvim", config=[[require('config.gitsigns')]]})
