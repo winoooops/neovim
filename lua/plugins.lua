@@ -125,6 +125,8 @@ return packer.startup(
         -- enable media preview in telescope 
         use "nvim-telescope/telescope-media-files.nvim"
         -- smart fuzzy find 
+    --
+        -- should run sudo apt-get install sqlite3 libsqlite3-dev
         use {
           "nvim-telescope/telescope-frecency.nvim",
           requires = {"tami5/sqlite.lua"}
