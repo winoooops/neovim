@@ -5,7 +5,7 @@ end
 
 configs.setup {
   -- see https://github.com/nvim-treesitter/nvim-treesitter for more
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
