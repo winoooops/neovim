@@ -1,0 +1,146 @@
+" The keys is represented as follows:
+" M->cmd, A->option, C->control
+" <ESC> - escape, <BS> - backspace, <CR> - return
+
+
+" ----------------------- 基本设置 ----------------------
+" leader key is space
+let mapleader = " "
+" 启用vim surround功能: "foo bar" -> cs "' -> 'foo bar'
+set surround
+" 启用multi cursor
+set multiple-cursors
+" 显示行号
+set nu
+" 显示相对行号
+set rnu
+" 高亮搜索
+set hlsearch
+" 自动定位到输入中的字符串，不需要回车搜索
+set incsearch
+" 显示当前的模式
+set showmode
+" 共享系统粘贴板
+set clipboard=unnamed
+set clipboard+=ideaput
+" 搜索时智能匹配大小写
+set ignorecase smartcase
+" 高亮yank
+set highlightedyank
+" 开启nerdtree
+set nerdtree
+" 快捷键辅助
+set which-key
+" 开启 easymotion
+set easymotion
+set notimeout
+
+----------------------- plugins 设置 ----------------------------
+--------- nerdtree -------
+let g:NERDTreeMapMenu = "m"
+let g:NERDTreeMapActivateNode = "o"
+let g:NERDTreeMapPreview = "go"
+let g:NERDTreeMapRefresh = "r"
+let g:NERDTreeMapRefreshRoot = "R"
+let g:NERDTreeMapOpenRecursively = "l"
+let g:NERDTreeMapCloseDir = "h"
+
+" ---------------------- tab操作和window操作 -----------------------
+" J, K 跳转前后窗口
+noremap J gT
+noremap K gt
+
+" split窗口group
+noremap <leader>sg <ESC>:action SplitHorizontally<CR>
+noremap <leader>sG <ESC>:action SplitVertically<CR>
+noremap <leader>su <ESC>:action Unsplit<CR>
+" 关闭当前group
+noremap <leader>cg <ESC>:action CloseEditorsGroup<CR>
+
+" -------------移动tab----------
+" 移动到右group
+noremap <leader>ml <ESC>:action MoveTabRight<CR>
+" 移动到下group
+noremap <leader>mj <ESC>:action MoveTabDown<CR>
+" 移动到对面group
+noremap <leader>mo <ESC>:action MoveEditorToOppositeTabGroup<CR>
+
+" ------------ 移动pane -----------
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+
+
+" ------------ 移动方法 ------------
+nnoremap [[ <ESC>:action MethodUp<CR>
+nnoremap ]] <ESC>:action MethodDown<CR>
+
+
+" --------- 切换focus标签 ---------
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" -------------------- 缩进和行操作 --------------------------
+" 在Visual模式下改变缩进不会退出
+vmap < <gv
+vmap > >gv
+
+" 移动行
+vmap J :m '>+1<CR>gv-gv
+vmap K :m '<-2<CR>gv-gv
+
+
+" ------------------- Cursor Movement ------------------------
+" 在insert模式
+inoremap <C-h> <C-O>h
+inoremap <C-l> <C-O>l
+inoremap <C-j> <C-O>j
+inoremap <C-k> <C-O>k
+inoremap <C-w> <C-O>w
+inoremap <C-e> <C-O>e
+inoremap <C-b> <C-O>b
+inoremap <C-a> <C-O>a
+inoremap <C-i> <C-O>i
+
+"
+noremap <C-<> <ESC>:action Back<CR>
+noremap <C->> <ESC>:action Forward<CR>
+
+
+" ----------------------------------------------------<leader>--------------------------------------------------
+" save & quit
+noremap <leader>q :wq<CR>
+
+" 注释
+noremap <leader>/ <ESC>:action CommentByLineComment<CR>
+
+" easymotion find
+map <leader>f <Plug>(easymotion-s)
+
+" open nerdtree
+map <leader>x :NERDTreeToggle<CR>
+
+" 折叠相关
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
+
+
+" goto 相关
+map <leader>gd :action GotoDeclaration<CR>
+map <leader>gD :action GotoTypeDeclaration<CR>
+map <leader>gi :action GotoImplementation<CR>
+map <leader>gu :action ShowUsages<CR>
+map <leader>gt :action GotoTest<CR>
+
+" error相关
+map <leader>es :action ShowErrorDescription<CR>
+map <leader>en :action GotoNextError<CR>
+map <leader>eN :action GotoPreviousError<CR>
+
+" idea常用功能
+map <leader>r :action RefactoringMenu<CR>
+map <leader>g :action Generate<CR>
+map <leader>mi :action Maven.Reimport<CR>
