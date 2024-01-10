@@ -2,9 +2,6 @@
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 
 
--- see https://github.com/kyazdani42/nvim-tree.lua for more
-
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return

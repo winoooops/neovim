@@ -147,14 +147,14 @@ return packer.startup(
         use({"lewis6991/gitsigns.nvim", config=[[require('config.gitsigns')]]})
 
         -- nvim-tree
-        use 'kyazdani42/nvim-web-devicons'
-        use({'kyazdani42/nvim-tree.lua', config=[[require('config.nvimtree')]]})
+        use 'nvim-tree/nvim-web-devicons'
+        use({'nvim-tree/nvim-tree.lua', config=[[require('config.nvimtreeconfig')]]})
 
         -- terminal tools 
         use({ "akinsho/toggleterm.nvim", config=[[require('config.toggleterm')]]})
 
         -- indentline 
-        use({ "lukas-reineke/indent-blankline.nvim", config = [[require('config.indentline')]]})
+        use({ "lukas-reineke/indent-blankline.nvim", main = "ibl", config = [[require('config.indentline')]]})
 
         -- project managers
         use({ "ahmedkhalf/project.nvim", config = [[require('config.projects')]]})
