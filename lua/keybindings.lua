@@ -93,3 +93,5 @@ map("n", "<leader>fs", "<cmd>lua require('telescope').extensions.frecency.frecen
 -- lazygit 
 map("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opt)
 
+-- toggleterm using <C-t>
+
